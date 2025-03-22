@@ -1,79 +1,83 @@
-# Facial-Recognition
-This program uses advanced facial recognition technology to detect and identify faces in real-time from a live video feed. It compares detected faces against a database of known profiles and provides visual feedback directly on the video stream.
+# Advanced Facial Recognition System
 
-How It Works:
+An advanced, secure, and robust Facial Recognition System built using Python, OpenCV, and the face_recognition library. This project provides accurate facial recognition, advanced head-pose detection, and an intuitive user interface designed for comfortable use.
 
-    1. Setup Known Profiles:
-    	• Add images of known individuals to the Profiles folder.
-    	• The program automatically encodes these images and associates them with the names provided in the script.
-    
-    2. Face Detection:
-    	• Captures frames from the webcam.
-    	• Detects face locations and scales them for faster processing.
-    
-    3. Recognition:
-    	• Compares detected faces against the stored encodings.
-    	• Matches are displayed with a green box and the person’s name.
-    	• Unknown faces are marked with a red box and labeled as “Unrecognized.”
-    
-    4. Real-Time Feedback:
-    	• Results are displayed directly on the video feed.
-    	• Press q to quit the program.
-  
-Values to Update for Public Use:
+## Features
+- **Face Registration**: Register multiple angles for improved accuracy.
+- **Real-Time Facial Recognition**: Fast, reliable, and stable facial recognition.
+- **Head Pose Estimation**: Accurate detection of yaw, pitch, and roll.
+- **Modern GUI**: Clean, modern, and intuitive user interface.
+- **Encodings Management**: Efficient storage and retrieval of facial encodings.
 
-    1. Known Profiles:
-     
-    	  • File Paths: Replace the image paths (image_paths) with publicly accessible directories or allow dynamic uploading of user images.
-    	  • Names: Update the known_face_names list to match the corresponding names of individuals in the profile images.
-       
-           image_paths = ["path/to/user1.jpg", "path/to/user2.jpg"]
-           known_face_names = ["User 1", "User 2"]
-       
-    3. Face Match Threshold:
-     
-    	  • Adjust the face_match_threshold for the desired accuracy:
-    	  • Lower values (e.g., 0.4) are more strict, reducing false positives.
-    	  • Higher values (e.g., 0.6) are more lenient, increasing recognition flexibility.
-    
-    4. Camera Source:
-        
-    	  •	Update the camera index in cv2.VideoCapture(0):
-    	  •	0 for the default webcam.
-    	  •	Other numbers (e.g., 1, 2) for external or multiple cameras.
-      	
-    5. Database Integration (Optional):
-       
-    	  •	Replace static lists (image_paths, known_face_names) with a dynamic database or API to load profiles.
-    
-    6. Output Labels:
-    	  •	Customize the text displayed for recognized and unrecognized faces (e.g., change “Unrecognized” to “Guest” or “Unknown User”).
-    
-    7. Resolution and Display:
-    	  •	Modify the resolution of the video feed for better clarity or performance based on hardware capabilities
+## Installation
 
+### Requirements
+- Python 3.8 or higher
+- OpenCV
+- face_recognition
+- NumPy
+- SciPy
 
+### Step-by-step installation:
+```bash
+git clone https://github.com/your_username/facial-recognition-system.git
+cd facial-recognition-system
 
-Requirements:
+# Recommended virtual environment
+python3 -m venv env
+source env/bin/activate
 
-    • Python installed on your computer.
-    • A webcam for video input.
+pip install -r requirements.txt
+```
 
-Required Libraries:
+### Requirements File (`requirements.txt`)
+```
+opencv-python
+face_recognition
+numpy
+scipy
+```
 
-    • face_recognition
-    • numpy
-    • opencv-python
+## Usage
 
-Usage:
+### Face Registration
+To register a new face:
+```bash
+python face_registration.py
+```
 
-	1. Add clear images of known individuals to the database.
-	2. Run the program to start the facial recognition system.
-	3. View the live video feed with recognition results.
+Follow the on-screen prompts to capture multiple facial angles.
 
-Features:
+### Face Recognition
+Run the facial recognition script:
+```bash
+python facial_recognizer.py
+```
 
-	• Real-time face detection and recognition.
-	• Simple setup for adding known profiles.
-	• Visual feedback for recognized and unrecognized faces.
+Recognition starts instantly and displays the recognized user's name.
+
+### Controls
+- Press `q` to exit any of the running scripts.
+
+## Project Structure
+```
+.
+├── encodings             # Saved facial encodings
+├── camera.py             # Camera utility class
+├── face_registration.py  # Script to register new faces
+├── facial_recognizer.py  # Script to recognize faces in real-time
+├── utils.py              # Utility functions for registration & recognition
+├── requirements.txt      # Project dependencies
+└── README.md             # Project documentation (this file)
+```
+
+## Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## License
+MIT License
+
+---
+
+Made with ❤️ by [Your Name]
 
